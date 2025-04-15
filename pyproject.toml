@@ -1,0 +1,14 @@
+[project]
+name = "mcps"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "firebase-admin>=6.7.0",
+    "mcp-client>=0.2.0",
+    "mcp[cli]>=1.6.0",
+    "openai>=1.70.0",
+    "openai-agents>=0.0.9",
+    "pandas>=2.2.3",
+]
