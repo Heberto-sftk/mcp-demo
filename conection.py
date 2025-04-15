@@ -46,16 +46,12 @@ async def main():
                 
     async with MCPServerStdio(
         cache_tools_list=True,  # Cache the tools list, for demonstration
-        params={"command": "uv", "args": ["run","mcpdemo.py"]},
+        params={"command": "python", "args": ["mcpdemo.py"]},
     ) as server:
         with trace(workflow_name="MCP Example"):
             await run(server, user_input)
             await server.cleanup()
             
 if __name__ == "__main__":
-    # Check if uvx is installed
-    # This is a workaround for the fact that uvx is not installed by default in the agents package
-    if not shutil.which("uvx"):
-        raise RuntimeError("uvx is not installed. Please install it with `pip install uvx`.")
     
     asyncio.run(main())
